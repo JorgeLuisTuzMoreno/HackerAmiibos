@@ -1,0 +1,9 @@
+FROM python:3
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /hackermarvel
+WORKDIR /hackermarvel
+COPY requirements.txt /hackeramiibos/
+RUN pip install -r requirements.txt
+COPY . /hackeramiibos/
+CMD python manage.py runserver 0.0.0.0:80
